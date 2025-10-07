@@ -11,4 +11,5 @@
             160
         ] // Visual indicator where Ruff source formatter breaks, see pyproject.toml for Ruff settings
     },
+    "explorer.excludeGitIgnore": true
 }

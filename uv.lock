@@ -307,7 +307,7 @@ wheels = [
 ]
 
 [[package]]
-name = "finch"
+name = "finchdraw"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
