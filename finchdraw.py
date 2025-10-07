@@ -89,7 +89,7 @@ class Finch:
         cross = abs(dx1 * dy2 - dy1 * dx2)
 
         # If points are nearly collinear, replace the middle point
-        if cross < 0.01:  # tolerance in cm²
+        if cross < 0.001:  # tolerance in cm²
             self._path[-1] = (x, y)
         else:
             self._path.append((x, y))
