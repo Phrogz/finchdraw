@@ -12,7 +12,7 @@ See `example.ipynb` for some demonstrations.
 
 1. [Install uv](https://docs.astral.sh/uv/getting-started/installation/),
    if you do not already have it.
-2. Clone this repository locally
+2. Clone this repository locally (e.g. `git clone git@github.com:Phrogz/finchdraw.git`).
 3. In the cloned repository, run `uv sync` to create a virtual environment with the necessary libraries.
     * This will create a `.venv` folder in the project directory.
 4. Open the folder in VS Code.
