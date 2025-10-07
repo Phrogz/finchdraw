@@ -1,0 +1,14 @@
+{
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "never",
+            "source.organizeImports.ruff": "explicit",
+            "source.unusedImports": "never"
+        },
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true,
+        "editor.rulers": [
+            160
+        ] // Visual indicator where Ruff source formatter breaks, see pyproject.toml for Ruff settings
+    },
+}
