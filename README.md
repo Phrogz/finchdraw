@@ -16,5 +16,8 @@ See `example.ipynb` for some demonstrations.
 3. In the cloned repository, run `uv sync` to create a virtual environment with the necessary libraries.
     * This will create a `.venv` folder in the project directory.
 4. Open the folder in VS Code.
-5. Open the `example.ipynb` notebook.
-6. In the notebook, click on "Select Kernel", choose "Python Environments…", and then choose "finchdraw" (".venv/bin/python").
+5. If you do not have them, install the recommended VS Code extensions
+    * In the Extensions pane, type `@recommended` in the search to see the workspace recommendations.
+      In particular, you want the **Jupyter Notebooks** and **Jupyter Notebooks Renderers** extensions.
+6. Open the `example.ipynb` notebook.
+7. In the notebook, click on "Select Kernel", choose "Python Environments…", and then choose "finchdraw" (".venv/bin/python").

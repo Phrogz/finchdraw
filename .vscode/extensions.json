@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "charliermarsh.ruff",
+        "ms-python.debugpy",
+        "ms-python.python",
+        "tamasfe.even-better-toml",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-renderers",
+    ]
+}
