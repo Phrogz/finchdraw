@@ -66,8 +66,33 @@ class Finch:
                 x += R * (math.sin(th_new) - math.sin(th))
                 y -= R * (math.cos(th_new) - math.cos(th))
                 th = th_new
-            self._path.append((x, y))
+            self._add_point(x, y)
         self._pose = Pose(x, y, th)
+
+    def _add_point(self, x: float, y: float) -> None:
+        """Add a point to the path, removing collinear points to keep path compact."""
+        if len(self._path) < 2:
+            self._path.append((x, y))
+            return
+
+        # Check if the last three points are collinear (within tolerance)
+        p0 = self._path[-2]
+        p1 = self._path[-1]
+        p2 = (x, y)
+
+        # Vector from p0 to p1
+        dx1, dy1 = p1[0] - p0[0], p1[1] - p0[1]
+        # Vector from p1 to p2
+        dx2, dy2 = p2[0] - p1[0], p2[1] - p1[1]
+
+        # Cross product magnitude (area of parallelogram)
+        cross = abs(dx1 * dy2 - dy1 * dx2)
+
+        # If points are nearly collinear, replace the middle point
+        if cross < 0.01:  # tolerance in cm²
+            self._path[-1] = (x, y)
+        else:
+            self._path.append((x, y))
 
     # --- Motor API -----------------------------------------------------------
     def wheels(
