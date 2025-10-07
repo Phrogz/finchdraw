@@ -109,9 +109,11 @@ class Finch:
         speed_cm_s = abs(float(speed_cm_s))
         if speed_cm_s <= 0.0:
             return
-        duration: float = abs(distance_cm) / speed_cm_s
-        vl = vr = speed_cm_s * (1 if distance_cm >= 0 else -1)
-        self._advance(vl, vr, duration)
+        # Straight-line movement: just compute the endpoint directly
+        x = self._pose.x + distance_cm * math.cos(self._pose.th)
+        y = self._pose.y + distance_cm * math.sin(self._pose.th)
+        self._add_point(x, y)
+        self._pose = Pose(x, y, self._pose.th)
 
     def setTurn(
         self, direction: Literal["L", "R"], degrees: float, deg_per_s: float
